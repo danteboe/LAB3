@@ -6,9 +6,11 @@ public class Main {
 
         Fila fila = new Fila();
         GeneradorClientes clientes = new GeneradorClientes(fila, numClientes);
+        clientes.start();
 
         for (int i = 0; i < numCajeros; i++){
             Cajero cajero = new Cajero(i, fila);
+            cajero.start();
         }
     }
 }
