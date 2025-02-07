@@ -6,7 +6,9 @@ public class Fila{
     private boolean hayClientes = false;
     private ArrayList<HashMap<Integer,Integer>> fila = new ArrayList<HashMap<Integer,Integer>>();
 
-    public synchronized void anadirCliente(HashMap<Integer,Integer> cliente){
+    public synchronized void anadirCliente(int id, int tiempo){
+        HashMap<Integer,Integer> cliente = new HashMap<Integer,Integer>();
+        cliente.put(id,tiempo);
         fila.add(cliente);
         hayClientes = true;
         notify();
