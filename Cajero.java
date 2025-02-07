@@ -6,7 +6,7 @@ public class Cajero extends Thread {
     private Fila filaClientes;
     private double factorDeCansancio;
 
-    public Cajero(int id, Fila filaclientes) {
+    public Cajero(int id, Fila filaClientes) {
         this.id = id;
         this.filaClientes = filaClientes;
         this.factorDeCansancio = 1.0;
