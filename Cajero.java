@@ -26,14 +26,13 @@ public class Cajero extends Thread {
 
     @Override
     public void run() {
-        while(true){System.out.println("El cajero " + id + " comienza a procesar la fila " + id);
+        while(true){
         HashMap<Integer, Integer> clienteActual = filaClientes.sacarCliente();
         int tiempoBase = clienteActual.values().iterator().next();
         int idCliente = clienteActual.keySet().iterator().next();
         double tiempoCalculado = tiempoBase * factorDeCansancio;
 
-        System.out.println("El cajero " + id + " atendiendo al cliente " + (idCliente) + 
-                           " de la fila " + id + 
+        System.out.println("El cajero " + id + " atendiendo al cliente " + (idCliente) +  
                            " (tiempo de procesamiento básico: " + tiempoBase + "ms) " +
                            "factor de cansancio actual: " + factorDeCansancio + 
                            " tiempo de procesamiento actual: " + tiempoCalculado + "ms");
@@ -45,8 +44,7 @@ public class Cajero extends Thread {
         }
 
         factorDeCansancio += tiempoBase * 0.001; 
-    
-    System.out.println("El cajero " + id + " ha terminado de atender.");}
+    }
         
     }
 }

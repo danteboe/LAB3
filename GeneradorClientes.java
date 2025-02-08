@@ -16,6 +16,7 @@ public class GeneradorClientes extends Thread{
         while(uidActual!=numeroDeClientes){
             int tiempo = random.nextInt(0,2000);
             fila.anadirCliente(uidActual, tiempo);
+            System.out.println("Cliente " + uidActual + " añadido a la fila con tiempo de procesamiento " + tiempo + "ms");
             uidActual++;
             try {
                 Thread.sleep(2000);
